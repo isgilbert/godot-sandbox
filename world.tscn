@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://car5q44425x68"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x5x00"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_r78xd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2u67b"]
+size = Vector3(50, 2, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4t2w7"]
+size = Vector3(50, 2, 50)
+
+[node name="world" type="Node3D"]
+
+[node name="cube" type="RigidBody3D" parent="."]
+transform = Transform3D(0.914346, 0.404934, 0, -0.349511, 0.7892, 0.50498, 0.204484, -0.461726, 0.863131, 1.03868, 4.36472, 0.249833)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube"]
+shape = SubResource("BoxShape3D_x5x00")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="cube"]
+mesh = SubResource("BoxMesh_r78xd")
+
+[node name="cube2" type="RigidBody3D" parent="."]
+transform = Transform3D(0.437481, -0.339145, 0.832821, -0.349511, 0.7892, 0.50498, -0.828524, -0.511999, 0.226725, 0.419276, 6.21412, 0.249833)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube2"]
+shape = SubResource("BoxShape3D_x5x00")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="cube2"]
+mesh = SubResource("BoxMesh_r78xd")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.999149, -0.0376915, 0.0167554, -0.0367842, 0.997995, 0.0515113, -0.0186633, 0.0508512, -0.998532, -0.473752, 0.608252, -6.21386)
+fov = 62.9683
+
+[node name="floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+shape = SubResource("BoxShape3D_2u67b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+mesh = SubResource("BoxMesh_4t2w7")
