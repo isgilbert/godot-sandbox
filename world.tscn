@@ -1,18 +1,35 @@
-[gd_scene load_steps=9 format=3 uid="uid://car5q44425x68"]
+[gd_scene load_steps=14 format=3 uid="uid://car5q44425x68"]
 
 [ext_resource type="PackedScene" uid="uid://djay73af2gdej" path="res://assets/player.tscn" id="1_asshp"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_8ner7"]
+[ext_resource type="Texture2D" uid="uid://cnmhu2d7wmdvg" path="res://textures/Wood 058/Wood058_2K-JPG_NormalGL.jpg" id="2_yxqcx"]
+[ext_resource type="Texture2D" uid="uid://dexut4ussw68x" path="res://textures/Wood 058/Wood058_2K-JPG_Roughness.jpg" id="3_tqvl2"]
 [ext_resource type="Environment" uid="uid://borrtu3lr3fka" path="res://assets/environment.tres" id="3_wy3ls"]
+[ext_resource type="Texture2D" uid="uid://dy7eqefaw1se1" path="res://textures/Tiles 129 B/Tiles129B_2K-JPG_NormalGL.jpg" id="4_qdd2e"]
+[ext_resource type="Texture2D" uid="uid://dii17q4vdm2dy" path="res://textures/Tiles 129 B/Tiles129B_2K-JPG_Roughness.jpg" id="5_tu37s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x5x00"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38f3t"]
+albedo_color = Color(0.72549, 0.631373, 0.537255, 1)
+roughness_texture = ExtResource("3_tqvl2")
+normal_enabled = true
+normal_texture = ExtResource("2_yxqcx")
+
 [sub_resource type="BoxMesh" id="BoxMesh_r78xd"]
+material = SubResource("StandardMaterial3D_38f3t")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u67b"]
 size = Vector3(50, 2, 50)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y08u1"]
 albedo_color = Color(0.584314, 0.654902, 0.843137, 1)
+roughness_texture = ExtResource("5_tu37s")
+normal_enabled = true
+normal_scale = 3.28
+normal_texture = ExtResource("4_qdd2e")
+uv1_scale = Vector3(0.4, 0.4, 0.4)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_4t2w7"]
 material = SubResource("StandardMaterial3D_y08u1")
@@ -36,6 +53,7 @@ transform = Transform3D(0.437481, -0.339145, 0.832821, -0.349511, 0.7892, 0.5049
 shape = SubResource("BoxShape3D_x5x00")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="cube2"]
+transform = Transform3D(1, 0, -2.98023e-08, 2.98023e-08, 1, 2.23517e-08, 0, -7.45058e-09, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_r78xd")
 
 [node name="floor" type="StaticBody3D" parent="."]
