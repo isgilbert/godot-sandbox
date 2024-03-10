@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://qmktsylq3ns6"]
+
+[ext_resource type="Texture2D" uid="uid://brvdhmjulf3id" path="res://PNG/game_background_4/layers/sky.png" id="1_aegwx"]
+[ext_resource type="Script" path="res://background.gd" id="1_s1l2g"]
+[ext_resource type="Texture2D" uid="uid://tkr1xb7f5but" path="res://PNG/game_background_4/layers/clouds_1.png" id="2_mdsby"]
+[ext_resource type="Texture2D" uid="uid://bru5kn6st5u2u" path="res://PNG/game_background_4/layers/clouds_2.png" id="3_vajcr"]
+[ext_resource type="Texture2D" uid="uid://bqahd13scq88k" path="res://PNG/game_background_4/layers/rocks.png" id="4_833vn"]
+[ext_resource type="Texture2D" uid="uid://cm3826ii6mrlt" path="res://PNG/game_background_4/layers/ground.png" id="5_yk6yy"]
+
+[node name="Background" type="ParallaxBackground"]
+script = ExtResource("1_s1l2g")
+
+[node name="BG" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sky" type="Sprite2D" parent="BG"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_aegwx")
+
+[node name="Clouds" type="ParallaxLayer" parent="."]
+position = Vector2(577, 328)
+scale = Vector2(0.6, 0.6)
+
+[node name="Clouds1" type="Sprite2D" parent="Clouds"]
+texture = ExtResource("2_mdsby")
+
+[node name="Clouds2" type="Sprite2D" parent="Clouds"]
+position = Vector2(1496.67, -5)
+texture = ExtResource("2_mdsby")
+
+[node name="Rocks" type="Sprite2D" parent="."]
+position = Vector2(576, 326)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_833vn")
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(578, 325)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_yk6yy")
+
+[node name="Clouds2" type="ParallaxLayer" parent="."]
+position = Vector2(577, 328)
+scale = Vector2(0.6, 0.6)
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1674, 0)
+
+[node name="Clouds2" type="Sprite2D" parent="Clouds2"]
+position = Vector2(-150, -93.3333)
+texture = ExtResource("3_vajcr")
+
+[node name="Clouds3" type="Sprite2D" parent="Clouds2"]
+position = Vector2(868.333, 6.66666)
+texture = ExtResource("3_vajcr")
