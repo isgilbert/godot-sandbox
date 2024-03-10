@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://car5q44425x68"]
+[gd_scene load_steps=9 format=3 uid="uid://car5q44425x68"]
 
 [ext_resource type="PackedScene" uid="uid://djay73af2gdej" path="res://assets/player.tscn" id="1_asshp"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_8ner7"]
+[ext_resource type="Environment" uid="uid://borrtu3lr3fka" path="res://assets/environment.tres" id="3_wy3ls"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x5x00"]
 
@@ -47,11 +48,16 @@ shape = SubResource("BoxShape3D_2u67b")
 mesh = SubResource("BoxMesh_4t2w7")
 
 [node name="player" parent="." instance=ExtResource("1_asshp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1847, 0.966771, -3.31899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("2_8ner7")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 0, 0, 1, -1.50469, 16.5384, -1.37901)
+[node name="Camera3D" type="Camera3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 0.941811, 0.336142, 0, -0.336142, 0.941811, 0, 4.41413, 8.86729)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.973375, 0.229217, 0, -0.229217, 0.973375, 0, 2.82254, 6.1417)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.777774, -0.0209602, 0.628195, 0.622253, -0.166732, 0.764854, 0.0887087, 0.985779, 0.142722, 5.93537, 13.9192, 3.24455)
+light_color = Color(1, 1, 0.584314, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_wy3ls")
