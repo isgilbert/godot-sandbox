@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://car5q44425x68"]
+[gd_scene load_steps=8 format=3 uid="uid://car5q44425x68"]
 
 [ext_resource type="PackedScene" uid="uid://djay73af2gdej" path="res://assets/player.tscn" id="1_asshp"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_8ner7"]
@@ -10,7 +10,11 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u67b"]
 size = Vector3(50, 2, 50)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y08u1"]
+albedo_color = Color(0.584314, 0.654902, 0.843137, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_4t2w7"]
+material = SubResource("StandardMaterial3D_y08u1")
 size = Vector3(50, 2, 50)
 
 [node name="world" type="Node3D"]
@@ -43,7 +47,7 @@ shape = SubResource("BoxShape3D_2u67b")
 mesh = SubResource("BoxMesh_4t2w7")
 
 [node name="player" parent="." instance=ExtResource("1_asshp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1847, 0.848294, -3.31899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1847, 0.966771, -3.31899)
 script = ExtResource("2_8ner7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

@@ -25,7 +25,11 @@ func _physics_process(delta):
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
-		velocity.x = lerpf(velocity.x, 0, 0.1)
-		velocity.z = lerpf(velocity.z, 0, 0.1)
+		velocity.x = lerpf(velocity.x, 0, 0.02)
+		velocity.z = lerpf(velocity.z, 0, 0.02)
+		
+	var sphereMesh := $SphereMesh as Node3D
+	sphereMesh.rotate_x(deg_to_rad(velocity.z))
+	sphereMesh.rotate_z(deg_to_rad(-velocity.x))
 
 	move_and_slide()
