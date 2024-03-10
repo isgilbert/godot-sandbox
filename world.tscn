@@ -1,4 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://car5q44425x68"]
+[gd_scene load_steps=7 format=3 uid="uid://car5q44425x68"]
+
+[ext_resource type="PackedScene" uid="uid://djay73af2gdej" path="res://assets/player.tscn" id="1_asshp"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_8ner7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x5x00"]
 
@@ -30,10 +33,6 @@ shape = SubResource("BoxShape3D_x5x00")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="cube2"]
 mesh = SubResource("BoxMesh_r78xd")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.999149, -0.0376915, 0.0167554, -0.0367842, 0.997995, 0.0515113, -0.0186633, 0.0508512, -0.998532, -0.473752, 0.608252, -6.21386)
-fov = 62.9683
-
 [node name="floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
@@ -42,3 +41,13 @@ shape = SubResource("BoxShape3D_2u67b")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
 mesh = SubResource("BoxMesh_4t2w7")
+
+[node name="player" parent="." instance=ExtResource("1_asshp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1847, 0.848294, -3.31899)
+script = ExtResource("2_8ner7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 0, 0, 1, -1.50469, 16.5384, -1.37901)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.973375, 0.229217, 0, -0.229217, 0.973375, 0, 2.82254, 6.1417)

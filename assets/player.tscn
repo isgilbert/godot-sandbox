@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://djay73af2gdej"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tjh8t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahssl"]
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.8025
+
+[sub_resource type="SphereMesh" id="SphereMesh_uur5o"]
+material = SubResource("StandardMaterial3D_ahssl")
+
+[node name="player" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_tjh8t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_uur5o")
