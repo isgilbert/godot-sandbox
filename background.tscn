@@ -11,44 +11,42 @@
 script = ExtResource("1_s1l2g")
 
 [node name="BG" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(-0.1, -0.1)
 motion_mirroring = Vector2(1152, 0)
+metadata/_edit_lock_ = true
 
 [node name="Sky" type="Sprite2D" parent="BG"]
-position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_aegwx")
+centered = false
+metadata/_edit_lock_ = true
 
-[node name="Clouds" type="ParallaxLayer" parent="."]
-position = Vector2(577, 328)
+[node name="CloudsFar" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Clouds1" type="Sprite2D" parent="CloudsFar"]
 scale = Vector2(0.6, 0.6)
-
-[node name="Clouds1" type="Sprite2D" parent="Clouds"]
 texture = ExtResource("2_mdsby")
-
-[node name="Clouds2" type="Sprite2D" parent="Clouds"]
-position = Vector2(1496.67, -5)
-texture = ExtResource("2_mdsby")
+centered = false
 
 [node name="Rocks" type="Sprite2D" parent="."]
-position = Vector2(576, 326)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_833vn")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="CloudsClose" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Clouds4" type="Sprite2D" parent="CloudsClose"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_vajcr")
+centered = false
 
 [node name="Ground" type="Sprite2D" parent="."]
-position = Vector2(578, 325)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_yk6yy")
-
-[node name="Clouds2" type="ParallaxLayer" parent="."]
-position = Vector2(577, 328)
-scale = Vector2(0.6, 0.6)
-motion_scale = Vector2(0.6, 0.6)
-motion_mirroring = Vector2(1674, 0)
-
-[node name="Clouds2" type="Sprite2D" parent="Clouds2"]
-position = Vector2(-150, -93.3333)
-texture = ExtResource("3_vajcr")
-
-[node name="Clouds3" type="Sprite2D" parent="Clouds2"]
-position = Vector2(868.333, 6.66666)
-texture = ExtResource("3_vajcr")
+centered = false
+metadata/_edit_lock_ = true
